@@ -38,23 +38,11 @@ const addPatient = ( entry: NewPatientEntry ): PatientEntry => {
   return newPatientEntry;
 };
 
-const addEntry = (id: string, entry: any): PatientEntry => {
-  const patient = patients.find(patient => patient.id === id);
-  if (!patient) {
-    throw new Error('Patient not found');
-  }
-  const newEntry = {
-    id: uuid(),
-    ...entry
-  };
-  patient.entries.push(newEntry);
-  return patient;
-}
+
 
 export default {
   getEntries,
   getNonSensitiveEntries,
   addPatient,
-  getEntry, 
-  addEntry
+  getEntry,
 };
